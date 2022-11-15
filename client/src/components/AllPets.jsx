@@ -8,14 +8,14 @@ const AllPets = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8000/pets")
+    axios.get("/pets")
         .then(res=>{
             console.log(res.data)
             setPet(res.data)
         })       
         .catch(err => {
             console.log(err)
-        }) 
+        })  
 }, [])
 
 const sortedPets = pet.sort((a,b) => a.petType.localeCompare(b.petType))
@@ -42,7 +42,7 @@ const sortedPets = pet.sort((a,b) => a.petType.localeCompare(b.petType))
                 <tr key={onePet._id}>
                   <td>{onePet.petName}</td>
                   <td>{onePet.petType}</td>
-                  <td><Link to={`/pet/${onePet._id}`} >details</Link> | <Link to={`/pet/${onePet._id}/edit`}>edit</Link></td> | 
+                  <td><Link to={`/pet/${onePet._id}`} >details</Link> | <Link to={`/pet/${onePet._id}/edit`}>edit</Link></td> 
                 </tr>
               )
             })
