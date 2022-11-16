@@ -5,5 +5,5 @@ module.exports = app => {
     app.get('/api/pet/:id', PetController.findOnePet);
     app.post('/api/pet/new', PetController.createPet);
     app.put('/api/pet/:id', PetController.updatePet);
-    app.delete('/pet/:id', PetController.deletePet);
+    app.delete('/api/pet/:id', PetController.deletePet);
 }
