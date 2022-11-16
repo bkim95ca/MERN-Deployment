@@ -21,7 +21,7 @@ const EditPet = (props) => {
   const {id} = useParams()
 
   useEffect(() => {
-    axios.get("http://localhost:8000/pet/" + id)
+    axios.get("http://localhost:8000/api/pet/" + id)
         .then(res => {
             console.log(res.data)
             setPetName(res.data.petName)
@@ -41,7 +41,7 @@ const EditPet = (props) => {
 
   const updatePet =(e) => {
     e.preventDefault();
-    axios.put(`http://localhost:8000/pet/${id}`, {petName, petType, petDescription, skills1, skills2, skills3})
+    axios.put(`http://localhost:8000/api/pet/${id}`, {petName, petType, petDescription, skills1, skills2, skills3})
         .then(res => {
             console.log("client success")
             console.log(res.data)

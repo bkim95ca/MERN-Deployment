@@ -8,7 +8,7 @@ const AllPets = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("/pets")
+    axios.get("http://localhost:8000/api/pets")
         .then(res=>{
             console.log(res.data)
             setPet(res.data)

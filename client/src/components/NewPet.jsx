@@ -21,7 +21,7 @@ const NewPet = (props) => {
 
   const createPet = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/pet/new", {petName, petType, petDescription, skills1, skills2, skills3})
+    axios.post("http://localhost:8000/api/pet/new", {petName, petType, petDescription, skills1, skills2, skills3})
         .then(res => {
             console.log("client success")
             console.log(res.data)

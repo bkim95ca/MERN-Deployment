@@ -15,7 +15,7 @@ const OnePet = (props) => {
   const {id} = useParams()
 
   useEffect(() => {
-      axios.get(`http://localhost:8000/pet/${id}`)
+      axios.get(`http://localhost:8000/api/pet/${id}`)
           .then(res => {
               console.log(res.data)
               setPetName(res.data.petName)
@@ -31,7 +31,7 @@ const OnePet = (props) => {
   }, [id])
 
   const deletePet = (deleteID) => {
-    axios.delete(`http://localhost:8000/pet/${deleteID}`)
+    axios.delete(`http://localhost:8000/api/pet/${deleteID}`)
         .then(res => {
             console.log("Delete Success", res.data)
             navigate("/pets")
